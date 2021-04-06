@@ -19,11 +19,14 @@ removeTodolist: (todolistID: string) => void
     addTask: (title: string, todolistID: string) => void
     changeTaskStatus: (taskID: string, newIsDoneValue: boolean, todolistID: string) => void
     changeTaskTitle: (taskID: string, title:string, todolistID: string) => void
+    changeTodolistTitle: (title: string, todolistID: string) => void
 }
 
 export function Todolist(props: PropsType) {
+    const changeTodolistTitle = (title:string) => props.changeTodolistTitle(title, props.id)
     const tasks = props.tasks.map(t => {
         const changeStatus = (e: ChangeEvent<HTMLInputElement>) => props.changeTaskStatus(t.id, e.currentTarget.checked, props.id)
+
         const changeTaskTitle = (title: string) => props.changeTaskTitle(t.id, title, props.id)
         return (
             <li key={t.id}>
@@ -32,7 +35,6 @@ export function Todolist(props: PropsType) {
                     type="checkbox"
                     checked={t.isDone}/>
                     <EditableSpan title={t.title} changetitle={changeTaskTitle}/>
-                {/*<span>{t.title}</span>*/}
                 <button onClick={(() => props.removeTask(t.id, props.id))}>x</button>
             </li>
         )
@@ -51,7 +53,10 @@ export function Todolist(props: PropsType) {
     const addTask = (title: string) => {props.addTask(title, props.id)}
 
     return <div>
-        <h3>{props.titleN}<button onClick={removeTodolist}>X</button></h3>
+        <h3>
+        <EditableSpan title={props.titleN} changetitle={changeTodolistTitle}/>
+        <button onClick={removeTodolist}>X</button>
+        </h3>
         <AddItemForm addItem={addTask} />
 
         <ul>
