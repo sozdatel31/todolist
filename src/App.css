@@ -1,21 +1,23 @@
-.App {
-  padding: 30px;
-  display: flex;
-}
 
-.App > div {
-  margin-right: 50px;
-}
 
-.active-filter {
-  background-color: lawngreen;
-}
+/*.App {*/
+/*  padding: 30px;*/
+/*  display: flex;*/
+/*}*/
 
-.error {
-  border: red 2px solid;
-  outline: transparent;
-}
+/*.App > div {*/
+/*  margin-right: 50px;*/
+/*}*/
 
-.error-text {
-  color:red;
-}
+/*.active-filter {*/
+/*  background-color: lawngreen;*/
+/*}*/
+
+/*.error {*/
+/*  border: red 2px solid;*/
+/*  outline: transparent;*/
+/*}*/
+
+/*.error-text {*/
+/*  color:red;*/
+/*}*/
