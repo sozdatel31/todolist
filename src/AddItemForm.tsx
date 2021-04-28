@@ -9,7 +9,7 @@ type AddItemFormPropsType = {
 function AddItemForm(props: AddItemFormPropsType) {
     const [title, setTitle] = useState<string>("")
     const [error, setError] = useState<string | null>(null)
-    const errorMessage = error ? <div className={"error-text"}>{error}</div> : null
+    //const errorMessage = error ? <div className={"error-text"}>{error}</div> : null
     const onKeyPressAddItem = (e: KeyboardEvent<HTMLInputElement>) => {
         if (e.key === "Enter") {
             addItem()
