@@ -12,8 +12,8 @@ function EditableSpan(props: EditableSpanPropsType) {
 
     const changeTitle = (e: ChangeEvent<HTMLInputElement>) => {
         setTitle(e.currentTarget.value)
-
     }
+
     const onEditMode = () => setEditMode(true)
     const offEditMode = () => {
         setEditMode(false)
@@ -30,13 +30,6 @@ function EditableSpan(props: EditableSpanPropsType) {
                 onChange={changeTitle}
             /> : <span onDoubleClick={onEditMode}>{props.title}</span>
     )
-    //     <input
-    //     value={title}
-    //     autoFocus
-    //     onBlur={offEditMode}
-    //     onChange={changeTitle}
-    // /> : <span onDoubleClick={onEditMode}>{props.title}</span>
-
 
 }
 

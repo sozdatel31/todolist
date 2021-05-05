@@ -25,6 +25,7 @@ type PropsType = {
 }
 
 export function Todolist(props: PropsType) {
+
     const changeTodolistTitle = (title: string) => props.changeTodolistTitle(title, props.id)
     const tasks = props.tasks.map(t => {
         const changeStatus = (e: ChangeEvent<HTMLInputElement>) => props.changeTaskStatus(t.id, e.currentTarget.checked, props.id)
