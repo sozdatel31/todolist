@@ -56,13 +56,7 @@ export const tasksReducer = (state=initialState, action: ActionType): TasksState
              let copyState2 = {...state}
             copyState2[action.todolistID] = copyState2[action.todolistID].map(t => t.id === action.taskID ? {...t, isDone: action.taskIsDone} : t)
              return copyState2
-            // let copyState = {...state}
-            // let updateTaskTodolist = copyState[action.todolistID].map(task=> {
-            //     task.id === action.taskID ? {...task, isDone: action.taskIsDone} : task
-            // })
-            // return {
-            //     ...state, [action.todolistID]: updateTaskTodolist
-            // }
+
         case "NAME_TASK": {
             let copyState = {...state}
             copyState[action.todolistID] =
